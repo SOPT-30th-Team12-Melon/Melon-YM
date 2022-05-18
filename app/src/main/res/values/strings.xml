@@ -16,6 +16,9 @@
     <string name="tab_search">검색</string>
     <string name="tab_storage">저장소</string>
 
+    <!--home-->
+    <string name="favourite_music">내가 좋아할 음악</string>
+
     <!-- Album -->
     <string name="album_title">TITLE</string>
     <string name="album_select_all">전체선택</string>
