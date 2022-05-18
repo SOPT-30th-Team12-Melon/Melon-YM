@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="favouriteData"
+            type="org.sopt.jointseminar.melon.data.home.ResponseHomeFavourite" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{favouriteData.title}"
+            android:fontFamily="@font/pretendard_m"
+            android:includeFontPadding="false"
+            android:textSize="14sp"
+            android:textColor="@color/green_600"
+            tools:text="이번 주 인기 플레이리스트"
+            app:layout_constraintStart_toStartOf="@id/layout_square"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_square"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_radius_6"
+            android:backgroundTint="@color/gray_600"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="1:1">
+
+            <ImageView
+                android:id="@+id/iv_favourite"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginHorizontal="40dp"
+                app:layout_constraintWidth_percent="0.6"
+                android:scaleType="centerCrop"
+                android:background="@drawable/rectangle_radius_6"
+                android:clipToOutline="true"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/img_favourite" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="12dp"
+                android:text="@{favouriteData.content}"
+                android:gravity="center"
+                android:fontFamily="@font/pretendard_m"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:maxEms="9"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="POP 갬성 폭발 분위기 끝내주는"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_favourite" />
+
+            <TextView
+                android:id="@+id/tv_hash_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{favouriteData.hashTag}"
+                android:fontFamily="@font/pretendard_m"
+                android:textColor="@color/gray_300"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="12dp"
+                android:maxEms="9"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="#분위기 #팝송"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_content"
+                app:layout_constraintStart_toStartOf="@+id/tv_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/iv_favourite"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_home_play" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
