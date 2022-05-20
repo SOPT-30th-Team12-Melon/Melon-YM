@@ -4,7 +4,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class ItemDecorationHomeHorizontal : RecyclerView.ItemDecoration() {
+class TrendyItemDecoration : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -13,8 +13,13 @@ class ItemDecorationHomeHorizontal : RecyclerView.ItemDecoration() {
     ) {
         super.getItemOffsets(outRect, view, parent, state)
         val position = parent.getChildAdapterPosition(view)
-        if(position==0)
+        val spanCount = 2
+        if(position%spanCount==0){
+            outRect.bottom=7
+        }
+        if(position<=1){
             outRect.left=20
+        }
         outRect.right=10
     }
 }

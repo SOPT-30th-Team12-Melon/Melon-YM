@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/rectangle_radius_6"
+    android:backgroundTint="@color/red_600">
+
+    <ImageView
+        android:id="@+id/iv_album_cover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.154"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="1"
+        android:textSize="16sp"
+        android:fontFamily="@font/pretendard_m"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintStart_toEndOf="@id/iv_album_cover"
+        app:layout_constraintTop_toTopOf="@id/iv_album_cover"
+        app:layout_constraintBottom_toTopOf="@id/tv_line"
+        />
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/white"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintStart_toStartOf="@id/tv_rank"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rank"
+        app:layout_constraintTop_toBottomOf="@id/tv_rank"
+        app:layout_constraintBottom_toBottomOf="@id/iv_album_cover"
+        />
+
+    <TextView
+        android:id="@+id/tv_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        tools:text="Love dive"
+        android:fontFamily="@font/pretendard_m"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rank"
+        app:layout_constraintStart_toEndOf="@+id/tv_rank"
+        app:layout_constraintTop_toTopOf="@+id/tv_rank" />
+
+    <TextView
+        android:id="@+id/tv_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        tools:text="아이브"
+        android:fontFamily="@font/pretendard_m"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_line"
+        app:layout_constraintStart_toEndOf="@+id/tv_line"
+        app:layout_constraintTop_toTopOf="@+id/tv_line" />
+</androidx.constraintlayout.widget.ConstraintLayout>

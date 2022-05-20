@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="trendyData"
+            type="org.sopt.jointseminar.melon.data.home.ResponseHomeTrendy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_radius_6"
+        android:backgroundTint="@color/gray_600">
+
+        <ImageView
+            android:id="@+id/iv_album_cover"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="12dp"
+            android:clipToOutline="true"
+            android:background="@drawable/rectangle_radius_6"
+            app:layout_constraintWidth_percent="0.61"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:srcCompat="@drawable/img_ugrs" />
+
+        <ImageView
+            android:id="@+id/iv_play"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="27dp"
+            app:layout_constraintWidth_percent="0.26"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_album_cover"
+            app:layout_constraintEnd_toEndOf="@+id/iv_album_cover"
+            app:layout_constraintStart_toStartOf="@+id/iv_album_cover"
+            app:layout_constraintTop_toTopOf="@+id/iv_album_cover"
+            app:srcCompat="@drawable/ic_play_big" />
+
+        <TextView
+            android:id="@+id/tv_mood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="@{trendyData.mood}"
+            tools:text="센치한"
+            android:fontFamily="@font/pretendard_m"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/iv_album_cover"
+            app:layout_constraintStart_toStartOf="@+id/iv_album_cover"
+            app:layout_constraintTop_toBottomOf="@+id/iv_album_cover" />
+
+        <TextView
+            android:id="@+id/tv_hashtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="11dp"
+            android:text="@{trendyData.hashTag}"
+            tools:text="#감성힙합 #알앤비"
+            app:layout_constraintTop_toBottomOf="@id/tv_mood"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_mood"
+            app:layout_constraintEnd_toEndOf="@id/tv_mood" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

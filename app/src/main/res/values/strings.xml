@@ -18,6 +18,8 @@
 
     <!--home-->
     <string name="favourite_music">내가 좋아할 음악</string>
+    <string name="new_music">최신음악</string>
+    <string name="top3">TOP3</string>
 
     <!-- Album -->
     <string name="album_title">TITLE</string>
