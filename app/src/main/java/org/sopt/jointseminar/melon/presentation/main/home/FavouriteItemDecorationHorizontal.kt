@@ -13,8 +13,8 @@ class FavouriteItemDecorationHorizontal : RecyclerView.ItemDecoration() {
     ) {
         super.getItemOffsets(outRect, view, parent, state)
         val position = parent.getChildAdapterPosition(view)
-        if(position==0)
-            outRect.left=20
-        outRect.right=10
+        if (position == 0)
+            outRect.left = 20
+        outRect.right = 10
     }
 }

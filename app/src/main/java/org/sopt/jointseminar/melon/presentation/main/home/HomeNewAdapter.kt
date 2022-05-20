@@ -8,26 +8,28 @@ import androidx.recyclerview.widget.RecyclerView
 import org.sopt.jointseminar.melon.data.home.ResponseNewMusic
 import org.sopt.jointseminar.melon.databinding.ItemHomeNewBinding
 
-class HomeNewAdapter : ListAdapter<ResponseNewMusic, HomeNewAdapter.HomeNewViewHolder>(NewComparator()) {
-    class HomeNewViewHolder(private val binding : ItemHomeNewBinding) : RecyclerView.ViewHolder(binding.root){
-        fun onBind(data : ResponseNewMusic){
-            binding.newData=data
+class HomeNewAdapter :
+    ListAdapter<ResponseNewMusic, HomeNewAdapter.HomeNewViewHolder>(NewComparator()) {
+    class HomeNewViewHolder(private val binding: ItemHomeNewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun onBind(data: ResponseNewMusic) {
+            binding.newData = data
         }
     }
 
-    private class NewComparator : DiffUtil.ItemCallback<ResponseNewMusic>(){
+    private class NewComparator : DiffUtil.ItemCallback<ResponseNewMusic>() {
         override fun areItemsTheSame(
             oldItem: ResponseNewMusic,
             newItem: ResponseNewMusic
         ): Boolean {
-            return oldItem.song==newItem.song
+            return oldItem.song == newItem.song
         }
 
         override fun areContentsTheSame(
             oldItem: ResponseNewMusic,
             newItem: ResponseNewMusic
         ): Boolean {
-            return oldItem==newItem
+            return oldItem == newItem
         }
 
     }

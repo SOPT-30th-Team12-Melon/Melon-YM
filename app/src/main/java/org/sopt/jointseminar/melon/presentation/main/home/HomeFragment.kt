@@ -1,6 +1,5 @@
 package org.sopt.jointseminar.melon.presentation.main.home
 
-import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -76,12 +75,12 @@ class HomeFragment : Fragment() {
         Log.d("viewpager", "$itemPadding")
         Log.d("viewpager", "$innerPadding")
         with(binding.vpBanner) {
-            getChildAt(0).overScrollMode=RecyclerView.OVER_SCROLL_NEVER
-            offscreenPageLimit=1
+            getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            offscreenPageLimit = 1
             setPadding(itemPadding, 0, itemPadding, 0)
-            setPageTransformer(CompositePageTransformer().apply{
+            setPageTransformer(CompositePageTransformer().apply {
                 addTransformer(ZoomOutPageTransformer())
-                addTransformer{ page, position->page.translationX=position*-(innerPadding) }
+                addTransformer { page, position -> page.translationX = position * -(innerPadding) }
             })
 
 //            addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -116,8 +115,8 @@ class HomeFragment : Fragment() {
         binding.rvNewMusic.addItemDecoration(FavouriteItemDecorationHorizontal())
     }
 
-    private fun initTrendyAdapter(){
-        homeTrendyAdapter= HomeTrendyAdapter()
+    private fun initTrendyAdapter() {
+        homeTrendyAdapter = HomeTrendyAdapter()
         homeTrendyAdapter.submitList(
             listOf(
                 ResponseHomeTrendy(R.drawable.img_ugrs, "센치한", "#감성힙합 #트렌디"),
@@ -131,7 +130,7 @@ class HomeFragment : Fragment() {
             )
         )
         binding.rvMelonTrendy.addItemDecoration(TrendyItemDecoration())
-        binding.rvMelonTrendy.adapter=homeTrendyAdapter
+        binding.rvMelonTrendy.adapter = homeTrendyAdapter
     }
 
     override fun onDestroyView() {

@@ -4,7 +4,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class BannerItemDecorationHorizontal(private val dp : Int) : RecyclerView.ItemDecoration() {
+class BannerItemDecorationHorizontal(private val dp: Int) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -12,7 +12,7 @@ class BannerItemDecorationHorizontal(private val dp : Int) : RecyclerView.ItemDe
         state: RecyclerView.State
     ) {
         super.getItemOffsets(outRect, view, parent, state)
-        outRect.right=dp
-        outRect.left=dp
+        outRect.right = dp
+        outRect.left = dp
     }
 }
